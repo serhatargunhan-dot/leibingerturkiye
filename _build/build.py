@@ -212,6 +212,77 @@ PAGES = [
        ('Ekartörler otoklavlanabilir mi?','Evet, paslanmaz çelik ekartörler standart otoklav sterilizasyonuna uygundur. Üreticinin bakım talimatlarına uyulmalıdır.')],
   related=('elevator','cerrahi-makas','portegu'),
  ),
+ dict(
+  slug='implant-temizleme', nav='İmplant temizleme',
+  title='Titanyum İmplant Küretleri ve Scaler\'lar | Leibinger',
+  desc='Alman menşeli Leibinger titanyum küretler ve scaler\'lar: Langer 1-2, 3-4, 5-6, H6-H7, 204SD, Columbia 2RL ve 4RL. İmplant temizleme seti içeriği.',
+  h1='Titanyum', h1em='implant küretleri', eyebrow='İmplantoloji · Periimplant bakım',
+  hero=LB + '2025/02/20250203-Leibinger-018.jpg',
+  lead='Leibinger titanyum küret ve scaler\'ları implant yüzeylerinin temizliği için üretilir. Titanyum uçlar, paslanmaz çelik aletlere göre titanyum implant yüzeyinde iz bırakma riskini azaltmak için tercih edilir.',
+  cats=('İmpant Temizleme',),
+  guide_title='İmplant temizleme seti içeriği',
+  guide_head=('Model','Kullanım (Leibinger kataloğu)','Katalog no'),
+  guide=[('Langer 1-2','Alt çene molar ve premolar','401/L1-2T-ED'),('Langer 3-4','Üst çene molar ve premolar','401/L3-4T-ED'),
+         ('Langer 5-6','Ön dişler','401/L5-6T-ED'),('H6-H7','Üniversal scaler','401/H6-H7T-ED'),('204SD','Üniversal scaler','401/204SD-T-ED'),
+         ('Easy Tray','5 alet için kaset, 180 × 70 × 30 mm','500/5')],
+  guide_note='Set içeriği Leibinger ana kataloğundaki "Implant Cleaning Set" sayfasından alınmıştır. Tüm titanyum küretler ErgoDesign (-ED) saplıdır. Columbia 2RL ve 4RL titanyum küretler ayrıca bulunur.',
+  faq=[('İmplant temizliğinde neden titanyum küret kullanılır?','Titanyum implant yüzeyi, daha sert paslanmaz çelik uçlarla çalışıldığında çizilebilir. Titanyum uçlu küret ve scaler\'lar bu riski azaltmak için tercih edilir.'),
+       ('Langer küret ile Gracey küret arasındaki fark nedir?','Langer küretler Gracey\'nin açılı şaftını üniversal küretin iki kesici kenarıyla birleştirir. Böylece bir alet, belirli bir bölgede hem mezial hem distal yüzeyde kullanılabilir.'),
+       ('İmplant temizleme seti tek tek alınabilir mi?','Evet. Set içindeki küret ve scaler\'lar Kristal Diş Deposu\'nda tek tek de bulunur.')],
+  related=('kuret','alet-kaseti','el-aletleri'),
+ ),
+ dict(
+  slug='kemik-pensi', nav='Kemik pensi',
+  title='Kemik Pensi (Rongeur), Kemik Eğesi ve Diş Eti Bıçağı | Leibinger',
+  desc='Alman menşeli Leibinger kemik pensleri (Friedmann, Mini Friedmann, Hartmann), Sugarman ve Miller kemik eğeleri, Kirkland ve Orban diş eti bıçakları.',
+  h1='Kemik pensi', h1em='ve eğesi', eyebrow='Cerrahi · Periodontal cerrahi',
+  hero=LB + '2025/02/20250203-Leibinger-059.jpg',
+  lead='Kemik pensleri keskin kenarlı kemik çıkıntılarını düzeltmek ve kemik almak için; kemik eğeleri kemik yüzeyini düzeltmek için; diş eti bıçakları ise gingivektomi ve gingivoplasti için kullanılır. Leibinger bu aletleri Almanya, Mühlheim\'da üretir.',
+  cats=('Kemik Pensleri','Kemik Eğesi ve Diş Eti Bıçağı'),
+  guide_title='Modeller ve kullanım',
+  guide_head=('Model','Tip','Ölçü / Not','Katalog no'),
+  guide=[('Mini Friedmann','Kemik pensi','12 cm','136/01'),('Friedmann','Kemik pensi','14 cm','136/0'),('Hartmann','Kemik pensi','18 cm','136/4'),
+         ('Sugarman','Kemik eğesi','1S-2S · 3S-4S · 9-10S','401/FS12 · FS34 · FS910'),('Miller','Kemik eğesi','—','338/3'),
+         ('Kirkland','Diş eti bıçağı','Gingivektomi','401/K1'),('Orban','Diş eti bıçağı','İnterdental bölge','401/KO12')],
+  guide_note='Ölçüler Leibinger ana kataloğundan ve Kristal Diş Deposu\'ndaki ürün adlarından alınmıştır. Katalogda Blumenthal ve Luer kemik pensleri de bulunur.',
+  faq=[('Friedmann ile Mini Friedmann arasındaki fark nedir?','İkisi de aynı formda kemik pensidir. Mini Friedmann 12 cm, Friedmann 14 cm uzunluğundadır; dar alanlarda daha kısa model tercih edilir.'),
+       ('Kirkland ve Orban bıçakları ne için kullanılır?','Kirkland bıçağı gingivektomide labial ve lingual yüzeylerde, Orban bıçağı ise interdental bölgelerde diş eti kesimi için kullanılır.')],
+  related=('elevator','cerrahi-makas','ekartor'),
+ ),
+ dict(
+  slug='penset', nav='Penset',
+  title='Cerrahi Penset ve Presel Çeşitleri | Adson, London College | Leibinger',
+  desc='Alman menşeli Leibinger Adson cerrahi doku pensleri, Adson mikro pensler ve London College preseller (elmas uçlu dahil).',
+  h1='Penset', h1em='ve presel', eyebrow='Cerrahi · Doku tutma · Muayene',
+  hero=LB + '2025/02/20210708_Leibinger_0058.jpg',
+  lead='Leibinger Adson pensleri cerrahide doku tutmak ve dikiş sırasında flebi sabitlemek için; London College preseller ise muayene ve restoratif işlemlerde küçük malzemeleri taşımak için kullanılır.',
+  cats=('Pensetler',), extra_sku=('OT.180/5',),
+  guide_title='Modeller',
+  guide_head=('Model','Uç','Uzunluk','Katalog no'),
+  guide=[('Adson cerrahi doku pensi','Dişli','12 · 15 cm','183/61 · 183/62'),('Adson mikro cerrahi doku pensi','Dişli, ince','12 cm','183/63'),
+         ('Adson mikro pens','İnce','12 cm','182/62 · 182/63'),('London College presel','Düz uç · elmas kaplı uç','15 cm','180/5 · 180/5D')],
+  guide_note='Uzunluklar Kristal Diş Deposu\'ndaki Leibinger ürün adlarından alınmıştır.',
+  faq=[('Elmas uçlu presel ne işe yarar?','Uçlardaki elmas kaplama tutuşu artırır; küçük ve kaygan parçalar daha güvenli tutulur.'),
+       ('Dişli doku pensi neden tercih edilir?','Uçtaki küçük dişler dokuyu kaydırmadan tutar ve daha az kuvvetle sabitleme sağlar.')],
+  related=('portegu','cerrahi-makas','el-aletleri'),
+ ),
+ dict(
+  slug='alet-kaseti', nav='Alet kaseti',
+  title='Otoklavlanabilir Alet Kaseti | Easy Tray, Wash Tray | Leibinger',
+  desc='Leibinger otoklavlanabilir alet kasetleri: Easy Tray ve Wash Tray (5\'li ve 10\'lu). Ölçüler ve kaset kullanmanın avantajları.',
+  h1='Alet', h1em='kasetleri', eyebrow='Saklama · Sterilizasyon',
+  hero=LB + '2025/03/20210708_Leibinger_0008.jpg',
+  lead='Leibinger alet kasetleri el aletlerini tedaviye göre düzenli tutmak, birlikte yıkamak ve otoklavlamak için tasarlanmıştır. Aletler kasette sabit durduğu için birbirine çarpmaz ve keskin uçlar daha güvenli taşınır.',
+  cats=('Alet Kasetleri',),
+  guide_title='Kaset ölçüleri',
+  guide_head=('Model','Kapasite','Ölçü','Katalog no'),
+  guide=[('Easy Tray','5 alet','180 × 70 × 30 mm','500/5'),('Easy Tray','10 alet','—','500/6'),
+         ('Ergo-Clip Wash Tray','5 alet','184 × 110 × 25 mm','500/TK'),('Ergo-Clip Wash Tray','10 alet','184 × 150 × 25 mm','500/T')],
+  guide_note='Ölçüler Leibinger ana kataloğundan alınmıştır. Katalogda 20 aletlik Ergo Cassette modelleri de bulunur.',
+  faq=[('Alet kaseti kullanmanın avantajı nedir?','Leibinger kataloğuna göre: aletler tedavi türüne göre set halinde düzenlenir ve arama zamanı azalır; aletler güvenle saklanır; kasette sabitlendikleri için keskin uçlarla yaralanma riski azalır.'),
+       ('Kasetler otoklava girer mi?','Evet, Easy Tray ve Wash Tray otoklavlanabilir kasetlerdir.')],
+  related=('implant-temizleme','kuret','el-aletleri'),
+ ),
 ]
 PG = {p['slug']: p for p in PAGES}
 MENU = ('davye','elevator','kuret','ortodonti-pensi','el-aletleri')
@@ -231,7 +302,7 @@ FOOTER = f'''<footer>
   <div class="wrap">
     <img src="{KD}/idea/hy/90/themes/selftpl_68a31aa3a0c2a/assets/uploads/logo.png" alt="Kristal Diş Deposu">
     <div>Kristal Diş Deposu · Otto Leibinger Türkiye resmî distribütörü<br>Cumhuriyet Mah. Tennuri Sok. No:13/C, Melikgazi / Kayseri
-      <div class="note">Kategoriler: {' · '.join(f'<a href="/{p["slug"]}/">{p["nav"]}</a>' for p in PAGES)} · <a href="/kataloglar/">Kataloglar</a> · <a href="/rehber/">Rehber</a></div>
+      <div class="note">Kategoriler: {' · '.join(f'<a href="/{p["slug"]}/">{p["nav"]}</a>' for p in PAGES)} · <a href="/kataloglar/">Kataloglar</a> · <a href="/rehber/">Rehber</a> · <a href="/neden-leibinger/">Neden Leibinger?</a></div>
       <div class="note">Görseller ve video: Otto Leibinger GmbH, Mühlheim an der Donau.</div></div>
     <a href="{KD}">kristaldisdeposu.com</a>
   </div>
@@ -245,6 +316,8 @@ def card(p):
 
 def page(pg):
     prods = by_cat(*pg['cats'])
+    if pg.get('extra_sku'):
+        prods += [p for p in P if p['sku'] in pg['extra_sku'] and p not in prods]
     if pg.get('exclude'):
         prods = [p for p in prods if p['sku'] not in pg['exclude']]
     if pg.get('skupre'):
@@ -262,7 +335,7 @@ def page(pg):
 </div></section>'''
     hub = ''
     if pg['slug'] == 'el-aletleri':
-        cards = ''.join(f'<a class="hubc" href="/{PG[s]["slug"]}/"><img src="{PG[s]["hero"]}" alt="" loading="lazy"><span>{PG[s]["nav"]}</span></a>' for s in ('davye','elevator','kuret','portegu','cerrahi-makas','ekartor','rubberdam','ayna','ortodonti-pensi'))
+        cards = ''.join(f'<a class="hubc" href="/{PG[s]["slug"]}/"><img src="{PG[s]["hero"]}" alt="" loading="lazy"><span>{PG[s]["nav"]}</span></a>' for s in ('davye','elevator','kuret','implant-temizleme','portegu','cerrahi-makas','kemik-pensi','ekartor','penset','rubberdam','ayna','ortodonti-pensi','alet-kaseti'))
         hub = f'<section style="padding-bottom:0"><div class="wrap"><span class="eyebrow">Kategoriler</span><h2 style="margin-top:12px">Gruba göre <em>incele</em></h2><div class="hub">{cards}</div></div></section>'
     faq = ''.join(f'<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in pg['faq'])
     rel = ''.join(('<a class="btn btn-ghost" href="/kataloglar/">Kataloglar</a>' if s == 'kataloglar-link' else f'<a class="btn btn-ghost" href="/{s}/">{PG[s]["nav"]}</a>') for s in pg['related'])
@@ -567,6 +640,66 @@ def rehber_index():
 </html>
 '''
 
+def about_page():
+    url = f'{SITE}/neden-leibinger/'
+    title = 'Neden Leibinger? Alman Menşeli Diş Hekimliği El Aletleri'
+    desc = 'Otto Leibinger 1978\'den beri Almanya, Mühlheim\'da (Tuttlingen bölgesi) diş hekimliği el aletleri üretiyor. Üretim yeri, ürün gamı ve Leibinger teknolojileri.'
+    img = LB + '2024/12/20210708_Leibinger_0086.jpg'
+    ld = [{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+            {"@type":"ListItem","position":1,"name":"Leibinger Dental Türkiye","item":SITE+'/'},
+            {"@type":"ListItem","position":2,"name":"Neden Leibinger?","item":url}]}]
+    body = [
+     ('1978\'den beri aile şirketi', 'Otto Leibinger GmbH 1978\'de kuruldu. Şirkete adını veren kurucusu, alet üretiminde uzun bir geleneği olan bir aileden geliyor. Leibinger bugün de aile şirketi olarak yönetiliyor.'),
+     ('Tıbbi teknolojinin merkezinde üretim', 'Leibinger\'in üretim yeri Mühlheim an der Donau, Almanya\'nın Tuttlingen bölgesinde. Leibinger, cerrahi ve tıbbi alet üretiminin dünya merkezi olarak bilinen bu bölgeyi yüksek kaliteli diş hekimliği el aletleri üretmek için en iyi koşullar olarak tanımlıyor. Aletler Alman menşelidir.'),
+     ('Teşhisten ortodontiye geniş ürün gamı', 'Leibinger kataloğu teşhis, restoratif tedavi, endodonti, periodontoloji, çekim, dental cerrahi, dental elektrotlar, ölçü kaşıkları, implantoloji, saklama ve sterilizasyon, protetik ve ortodonti gruplarını kapsar.'),
+     ('Leibinger teknolojileri', 'ColorIdent renk halkalarıyla aletleri numarasına bakmadan tanıma; ErgoDesign geniş ve hafif saplarla ergonomi; Deep Scale Gracey küretlerde derin cepler için daha uzun şaft ve daha kısa uç; titanyum küretlerle implant yüzeyleri için ayrı bir seri; FS rodyum mikro aynalarla mikrocerrahide net görüntü.'),
+     ('Türkiye\'de Leibinger', 'Kristal Diş Deposu, Otto Leibinger\'in Türkiye distribütörüdür. Leibinger ürünleri kristaldisdeposu.com üzerinden diş hekimlerine satılır; fiyatlar üye girişinden sonra görünür. Model seçimi ve set içerikleri için WhatsApp\'tan yazabilirsiniz.'),
+    ]
+    b = ''.join(f'<h2>{esc(h)}</h2><p>{esc(t)}</p>' for h, t in body)
+    cats = ''.join(f'<li><a href="/{p["slug"]}/">{esc(p["nav"])}</a></li>' for p in PAGES)
+    return _head(title, desc, url, img, ld) + f'''
+<main>
+<section class="phero">
+  <div class="wrap phero-grid">
+    <div class="txt">
+      <nav class="crumb" aria-label="Konum"><a href="/">Leibinger Türkiye</a> / <span>Neden Leibinger?</span></nav>
+      <span class="de"><span class="flag" aria-hidden="true"></span>Made in Germany · Alman menşeli</span>
+      <h1>Neden <em>Leibinger?</em></h1>
+      <p class="lead">1978\'den beri Almanya\'da, tıbbi alet üretiminin merkezinde üretilen diş hekimliği el aletleri.</p>
+    </div>
+    <img class="phero-img" src="{img}" alt="Leibinger üretimi">
+  </div>
+</section>
+<section>
+  <div class="wrap art">
+    <article>{b}
+      <p class="note2">Kaynak: Otto Leibinger GmbH ana kataloğu ve leibinger-dental.de.</p>
+    </article>
+    <aside><h3>Kategoriler</h3><ul>{cats}</ul></aside>
+  </div>
+</section>
+</main>
+{CONTACT_HTML}
+{FOOTER}
+</body>
+</html>
+'''
+
+def notfound_page():
+    return _head('Sayfa bulunamadı | Leibinger Dental Türkiye', 'Aradığınız sayfa bulunamadı.', SITE + '/404.html') + f'''
+<main>
+<section class="phero"><div class="wrap"><div class="txt" style="display:grid;gap:14px;justify-items:start;max-width:760px">
+  <h1>Sayfa <em>bulunamadı</em></h1>
+  <p class="lead">Aradığınız sayfa taşınmış ya da hiç olmamış olabilir. Aşağıdaki kategorilerden devam edebilirsiniz.</p>
+  <div class="cta">{''.join(f'<a class="btn btn-ghost" href="/{p["slug"]}/">{esc(p["nav"])}</a>' for p in PAGES)}</div>
+</div></div></section>
+</main>
+{CONTACT_HTML}
+{FOOTER}
+</body>
+</html>
+'''
+
 def main():
     base = open(os.path.join(B, 'base.css'), encoding='utf-8').read()
     open(os.path.join(ROOT, 'style.css'), 'w', encoding='utf-8').write(base + EXTRA_CSS)
@@ -575,12 +708,15 @@ def main():
         open(os.path.join(d, 'index.html'), 'w', encoding='utf-8').write(page(pg))
     os.makedirs(os.path.join(ROOT,'kataloglar'), exist_ok=True)
     open(os.path.join(ROOT,'kataloglar','index.html'),'w',encoding='utf-8').write(katalog_page())
+    os.makedirs(os.path.join(ROOT,'neden-leibinger'), exist_ok=True)
+    open(os.path.join(ROOT,'neden-leibinger','index.html'),'w',encoding='utf-8').write(about_page())
+    open(os.path.join(ROOT,'404.html'),'w',encoding='utf-8').write(notfound_page())
     os.makedirs(os.path.join(ROOT,'rehber'), exist_ok=True)
     open(os.path.join(ROOT,'rehber','index.html'),'w',encoding='utf-8').write(rehber_index())
     for a in REHBER:
         d = os.path.join(ROOT,'rehber',a['slug']); os.makedirs(d, exist_ok=True)
         open(os.path.join(d,'index.html'),'w',encoding='utf-8').write(rehber_page(a))
-    urls = [SITE + '/'] + [f'{SITE}/{p["slug"]}/' for p in PAGES] + [SITE + '/kataloglar/', SITE + '/rehber/'] + [f'{SITE}/rehber/{a["slug"]}/' for a in REHBER]
+    urls = [SITE + '/'] + [f'{SITE}/{p["slug"]}/' for p in PAGES] + [SITE + '/kataloglar/', SITE + '/neden-leibinger/', SITE + '/rehber/'] + [f'{SITE}/rehber/{a["slug"]}/' for a in REHBER]
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{u}</loc></url>' for u in urls) + '</urlset>\n'
     open(os.path.join(ROOT, 'sitemap.xml'), 'w').write(sm)
     for pg in PAGES:
