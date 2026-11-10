@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://leibingerturkiye.com/sitemap.xml
