@@ -369,6 +369,7 @@ def page(pg):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
 <link rel="stylesheet" href="/style.css">
+<script src="/consent.js" defer></script>
 {ld_s}
 {LD_STORE}
 </head>
@@ -426,6 +427,8 @@ def page(pg):
 CONTACT_HTML = '<section class="contact" id="iletisim">\n  <div class="wrap contact-grid">\n    <div>\n      <span class="eyebrow">İletişim</span>\n      <h2 style="margin-top:12px">Leibinger ürünleri için <em>bize ulaşın</em></h2>\n      <p class="lead">Model seçimi, set içerikleri ve sipariş için doğrudan yazabilir ya da arayabilirsiniz.</p>\n      <a class="btn btn-wa" href="https://wa.me/905340867700?text=Merhaba%2C%20leibingerturkiye.com%20%C3%BCzerinden%20ula%C5%9F%C4%B1yorum.%20Leibinger%20%C3%BCr%C3%BCnleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener"><svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.6l-.4-.2-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.8-3.8-1.8-5.9C5 9.9 10 5.2 16 5.2s11 4.7 11 10.6-5 10.6-11 10.6zm6-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg><span>WhatsApp\'tan ulaşın</span></a>\n    </div>\n    <dl class="cinfo">\n      <div><dt>Yetkili</dt><dd>Serhat Argunhan · Kristal Diş Deposu</dd></div>\n      <div><dt>Telefon</dt><dd><a href="tel:+905340867700">0534 086 77 00</a></dd></div>\n      <div><dt>WhatsApp</dt><dd><a href="https://wa.me/905340867700?text=Merhaba%2C%20leibingerturkiye.com%20%C3%BCzerinden%20ula%C5%9F%C4%B1yorum.%20Leibinger%20%C3%BCr%C3%BCnleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">0534 086 77 00</a></dd></div>\n      <div><dt>E-posta</dt><dd><a href="mailto:serhatarg@hotmail.com">serhatarg@hotmail.com</a></dd></div>\n      <div><dt>Adres</dt><dd>Cumhuriyet Mah. Tennuri Sok. No:13/C<br>Melikgazi / Kayseri</dd></div>\n    </dl>\n  </div>\n</section>\n<a class="wa-float" href="https://wa.me/905340867700?text=Merhaba%2C%20leibingerturkiye.com%20%C3%BCzerinden%20ula%C5%9F%C4%B1yorum.%20Leibinger%20%C3%BCr%C3%BCnleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp\'tan ulaşın"><svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.6l-.4-.2-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.8-3.8-1.8-5.9C5 9.9 10 5.2 16 5.2s11 4.7 11 10.6-5 10.6-11 10.6zm6-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg><span>WhatsApp\'tan ulaşın</span></a>\n'
 LD_STORE = '<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Store", "name": "Kristal Diş Deposu – Leibinger Dental Türkiye", "url": "https://leibingerturkiye.com/", "telephone": "+90 534 086 77 00", "email": "serhatarg@hotmail.com", "address": {"@type": "PostalAddress", "streetAddress": "Cumhuriyet Mah. Tennuri Sok. No:13/C", "addressLocality": "Melikgazi", "addressRegion": "Kayseri", "addressCountry": "TR"}, "brand": {"@type": "Brand", "name": "Otto Leibinger"}, "contactPoint": {"@type": "ContactPoint", "telephone": "+90 534 086 77 00", "contactType": "sales", "availableLanguage": ["Turkish"]}}</script>'
 EXTRA_CSS = '''
+.cerez{position:fixed;left:16px;right:16px;bottom:16px;z-index:60;max-width:560px;background:#1f2a1a;color:#fff;border-radius:14px;padding:14px 16px;box-shadow:0 10px 30px rgba(0,0,0,.25);font-size:.9rem;display:grid;gap:10px}.cerez p{margin:0;line-height:1.5}.cerez div{display:flex;gap:8px;justify-content:flex-end}.cerez button{font:inherit;font-weight:600;border-radius:999px;padding:8px 16px;border:1.5px solid #6bb33f;cursor:pointer;background:transparent;color:#fff}.cerez button[data-v=evet]{background:#6bb33f}@media (max-width:600px){.cerez{bottom:84px}}
+
 @media (max-width:860px){header .wrap{flex-wrap:wrap;row-gap:10px}header nav{display:flex;order:3;flex:1 0 100%;overflow-x:auto;gap:20px;padding:2px 0 6px;white-space:nowrap;font-size:.92rem;scrollbar-width:none;-webkit-overflow-scrolling:touch}header nav::-webkit-scrollbar{display:none}}
 
 .art{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:clamp(24px,5vw,64px);align-items:start}
@@ -531,6 +534,7 @@ def katalog_page():
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
 <link rel="stylesheet" href="/style.css">
+<script src="/consent.js" defer></script>
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 {LD_STORE}
 </head>
@@ -575,6 +579,7 @@ def _head(title, desc, url, og_img=None, ld=()):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
 <link rel="stylesheet" href="/style.css">
+<script src="/consent.js" defer></script>
 {ld_s}
 {LD_STORE}
 </head>
