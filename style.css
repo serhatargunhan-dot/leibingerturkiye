@@ -152,6 +152,16 @@ section + section, section + .band, .band + section{border-top:1px solid var(--g
 .btn-ghost{border-color:var(--green);color:var(--green-d)}
 footer{border-top:6px solid var(--green);background:var(--green-soft)}
 
+.art{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:clamp(24px,5vw,64px);align-items:start}
+.art article{max-width:720px}
+.art article h2{font-size:clamp(1.3rem,2.4vw,1.7rem);margin:28px 0 10px}
+.art article p{font-size:1.06rem;line-height:1.7;margin:0 0 12px}
+.art .rel{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.art aside{position:sticky;top:96px;border:1.5px solid var(--green);border-radius:16px;padding:18px 20px;background:#fff}
+.art aside h3{margin:0 0 10px;font-size:1rem}
+.art aside ul{margin:0;padding-left:18px;display:grid;gap:8px}
+@media (max-width:860px){.art{grid-template-columns:1fr}.art aside{position:static}}
+
 .katlist{display:grid;gap:12px;max-width:900px}
 .kat{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;border:1.5px solid var(--green);border-radius:16px;padding:18px 20px;text-decoration:none;background:#fff;transition:transform .15s ease}
 .kat:hover{transform:translateY(-2px)}

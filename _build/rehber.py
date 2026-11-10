@@ -1,0 +1,51 @@
+# Rehber yazıları: build.py tarafından içe aktarılır.
+REHBER = [
+ dict(
+  slug='davye-nasil-secilir',
+  title='Davye Nasıl Seçilir? Üst ve Alt Çene Davye Rehberi',
+  desc='Davye seçerken çene, diş grubu, gaga şekli ve sap tipine nasıl bakılır? Davye numaraları, çocuk davyeleri ve kırık kök davyeleri hakkında pratik rehber.',
+  h1='Davye nasıl', h1em='seçilir?', hero='2025/02/20210708_Leibinger_0046.jpg',
+  lead='Doğru davye, dişi kırmadan ve çevre dokuya zarar vermeden çekimi kolaylaştırır. Bu rehberde davye seçerken bakılacak dört noktayı ve sık kullanılan numaraları özetledik.',
+  body=[
+   ('1. Önce çeneyi ayırın', 'Üst çene davyelerinde gaga ile sap aynı doğrultudadır ya da hafif açılıdır. Alt çene davyelerinde ise gaga sapa göre belirgin şekilde dik açılıdır. Leibinger modellerinde çene, ürün adında ve katalog açıklamasında belirtilir.'),
+   ('2. Diş grubunu seçin', 'Kesici-kanin, premolar, molar, yirmi yaş dişi ve kök için ayrı davyeler vardır. Örneğin Leibinger kataloğunda Fig. 2 üst kesici ve kaninler, Fig. 7 üst premolarlar, Fig. 17 ve 18 üst sağ ve sol molarlar, Fig. 13 alt kanin ve premolarlar, Fig. 22 alt molarlar için tanımlanır.'),
+   ('3. Gaga şekline bakın', 'Molar davyelerinde furkasyona giren sivri uçlar bulunur. Kök davyelerinin gagası daha dar ve incedir. "Derin kavrama" modelleri (ör. 46L, 86A/86C) kökü daha apikalden tutmak için tasarlanmıştır.'),
+   ('4. Sap tipini seçin', 'Leibinger\'de standart sap (600 serisi) ve daha geniş, ergonomik ErgoDesign sap (604 serisi) seçenekleri vardır. Uzun çalışma seanslarında ergonomik sap el yorgunluğunu azaltabilir; seçim kişisel tercihe bağlıdır.'),
+   ('Çocuk davyeleri', 'Süt dişleri ve küçük ağızlar için daha küçük gagalı ayrı bir seri vardır. Leibinger çocuk davyeleri (37, 39, 51S, 29S, 13S, 22S, 33S) 7 parçalı pedo set olarak da bulunur.'),
+   ('Kırık kökler için', 'Çekim sırasında kırılan kökler için Leibinger "troubleshooter" davyeleri (604/44X alt, 604/45X alt-üst, 604/51X üst) keskin uçlarıyla kök parçasını çevre dokudan ayırır ve oluklu ağzında güvenle tutar.'),
+  ],
+  links=[('/davye/','Davye numaraları tablosu ve modeller'),('/elevator/','Elevatör ve lüksatörler')],
+ ),
+ dict(
+  slug='gracey-kuret-numaralari',
+  title='Gracey Küret Numaraları Ne Anlama Gelir? 1-2\'den 15-16\'ya',
+  desc='Gracey küret numaraları hangi diş ve yüzeyde kullanılır? 1-2, 5-6, 7-8, 11-12, 13-14, 15-16 küretler, Deep Scale (M) modeller ve üniversal küretle farkı.',
+  h1='Gracey küret', h1em='numaraları', hero='2025/02/20250203-Leibinger-018.jpg',
+  lead='Gracey küretler bölgeye özeldir: her numara belirli bir diş grubu ve yüzey için açılandırılmıştır. Numarayı bilmek, doğru küretle daha az kuvvetle daha etkili çalışmak demektir.',
+  body=[
+   ('Kısa kural', 'Küçük numaralar ön dişler, büyük numaralar arka dişler içindir. Tek numaralar ve çift numaralar aynı aletin iki ucudur; biri bir yüzey ya da taraf, diğeri karşı yüzey ya da taraf içindir.'),
+   ('Bölgelere göre', 'Leibinger kataloğuna göre: 1-2 ve 5-6 ön bölge (fasiyal ve oral), 7-8 yan dişler (fasiyal ve oral), 11-12 ve 15-16 premolar ve molarların meziali, 13-14 premolar ve molarların distali içindir.'),
+   ('Neden tek kesici kenar?', 'Gracey küretin yalnızca bir kesici kenarı vardır ve bu kenar alt şafta göre yaklaşık 70° açılıdır. Bu sayede alt şaft diş yüzeyine paralel tutulduğunda kesici kenar doğru açıyla köke temas eder.'),
+   ('Deep Scale (M) modeller', 'Derin ve dar ceplerde ve kök yüzeyi düzleştirmede kullanılmak üzere tasarlanmıştır. Leibinger Deep Scale Gracey\'lerde ilk şaft 3 mm daha uzun, çalışma ucu %50 daha kısadır (1-2M, 5-6M, 7-8M, 11-12M, 13-14M).'),
+   ('Üniversal küret ve scaler farkı', 'Üniversal küretin iki kesici kenarı vardır ve ağzın her bölgesinde kullanılabilir. Scaler ise sivri uçludur, çoğunlukla supragingival diş taşı için kullanılır. Gracey küretler subgingival çalışma için tercih edilir.'),
+   ('ColorIdent ile hızlı tanıma', 'Leibinger ColorIdent serisinde her numaranın kendi renk halkası vardır. Kasette doğru küreti numarayı okumadan bulmak kolaylaşır.'),
+  ],
+  links=[('/kuret/','Gracey küret numara tablosu ve modeller'),('/ayna/','Rodyum mikro aynalar')],
+ ),
+ dict(
+  slug='el-aletleri-bakimi',
+  title='Diş Hekimliği El Aletleri Bakımı ve Sterilizasyonu',
+  desc='Davye, küret, makas ve portegü gibi el aletlerinin temizliği, yağlanması ve otoklav sterilizasyonu. Alet ömrünü uzatmak için pratik öneriler.',
+  h1='El aletleri', h1em='bakımı', hero='2025/02/20210708_Leibinger_0059-1536x1024.jpg',
+  lead='Paslanmaz çelik el aletleri doğru temizlenip yağlandığında uzun yıllar kullanılabilir. Bu rehberde günlük bakım için temel adımları özetledik. Her zaman üreticinin bakım talimatı ve kliniğinizin sterilizasyon protokolü esas alınmalıdır.',
+  body=[
+   ('1. Kullanımdan hemen sonra', 'Kan ve doku artıklarının kurumasına izin vermeyin. Aletleri kullanımdan sonra mümkün olan en kısa sürede ön temizliğe alın; kuruyan artıklar hem temizliği zorlaştırır hem de yüzeyde lekeye yol açabilir.'),
+   ('2. Temizlik', 'Menteşeli aletleri (davye, makas, portegü) açık konumda temizleyin. Ultrasonik banyo ya da yıkama-dezenfeksiyon cihazı kullanılıyorsa, alet üreticisine uygun deterjan ve süre seçilmelidir. Klorür içeren solüsyonlarda uzun süre bekletmek paslanmaz çelikte korozyona yol açabilir.'),
+   ('3. Durulama ve kurutma', 'Deterjan kalıntısı kalmaması için iyice durulayın, ardından tamamen kurutun. Islak kalan menteşe ve oluklarda leke ve korozyon oluşabilir.'),
+   ('4. Yağlama', 'Menteşeli aletler sterilizasyondan önce menteşe bölgesinden yağlanmalıdır. Leibinger HI TECH yağı otoklav ve sıcak hava sterilizasyonu için valide edilmiştir, 260 °C\'ye kadar dayanıklıdır, silikon içermez ve aletlerde leke veya reçineleşme bırakmaz (7 mm uygulama uçlu, 12 ml).'),
+   ('5. Sterilizasyon ve saklama', 'Aletleri birbirine çarpmayacak şekilde kaset ya da tepsilerde sterilize edin ve saklayın. Özellikle küret uçları, lüksatörler ve mikro aynalar darbeye hassastır.'),
+   ('6. Düzenli kontrol', 'Küret ve scaler uçlarını keskinlik açısından, makas ve portegüleri ağız uyumu açısından düzenli kontrol edin. Körelmiş bir küret daha fazla kuvvet gerektirir ve hem hekimi hem hastayı yorar.'),
+  ],
+  links=[('/el-aletleri/','Tüm el aletleri'),('/kataloglar/','HI TECH yağ broşürü')],
+ ),
+]

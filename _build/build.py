@@ -3,7 +3,8 @@
 Kullanım: python3 _build/build.py  (repo kökünden)
 Ürün verisi: _build/products.json (Kristal Diş Deposu, Otto Leibinger markası)
 """
-import json, html, os, re
+import json, html, os, re, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 B = os.path.join(ROOT, '_build')
@@ -13,6 +14,7 @@ IMG = KD + '/idea/hy/90/myassets/products/'
 LB = 'https://www.leibinger-dental.de/wp-content/uploads/'
 BRAND = KD + '/marka/otto-leibinger'
 
+from rehber import REHBER
 P = json.load(open(os.path.join(B, 'products.json'), encoding='utf-8'))
 esc = html.escape
 
@@ -25,7 +27,7 @@ def by_cat(*cats):
 # ---------------- sayfa içerikleri ----------------
 PAGES = [
  dict(
-  slug='davye', nav='Davye',
+  slug='davye', menu=True, nav='Davye',
   title='Davye Çeşitleri ve Numaraları | Alman Menşeli Leibinger Davyeler',
   desc='Alman menşeli Otto Leibinger davyeler: üst ve alt çene davyeleri, kök davyeleri, çocuk davye seti. Davye numaraları ve kullanım alanları. Türkiye resmî distribütörü Kristal Diş Deposu.',
   h1='Davye', h1em='çeşitleri', eyebrow='Diş çekim davyeleri · İngiliz tipi',
@@ -43,7 +45,7 @@ PAGES = [
   related=('el-aletleri','kuret','portegu'),
  ),
  dict(
-  slug='kuret', nav='Küret',
+  slug='kuret', menu=True, nav='Küret',
   title='Gracey Küret Numaraları ve Periodontal Küretler | Leibinger',
   desc='Alman menşeli Leibinger Gracey küretler (1-2\'den 15-16\'ya), Lucas cerrahi küretler ve periodontal scaler\'lar. Küret numaraları hangi bölgede kullanılır?',
   h1='Küret', h1em='ve scaler', eyebrow='Periodontoloji · ColorIdent · SharpCut',
@@ -89,12 +91,12 @@ PAGES = [
   guide=[('Iris','11 cm','Düz · eğri','220/2 · 220/1 (SC)'),('La Grange','11,5 cm','Çift eğri','245/1 (SC)'),('Goldman-Fox','13 cm','Düz · eğri, tırtıklı','240/1 · 240/2 (SC)'),('Kelly','16 cm','Düz · eğri','250/1 · 250/0 (SC)'),('Wagner','12 cm','Düz · eğri','230/1 · 230/2'),('Joseph','14,5 cm','Düz · eğri','235/3 · 235/4'),('Spencer (dikiş makası)','9 cm','—','—'),('Mikro makas','15 · 18 cm','Düz · eğri','251/31–251/34')],
   guide_note='SC = Supercut: özel bileme ile çok keskin kesici kenarlar; tek altın renkli halkasından ayırt edilir. Uzunluk ve katalog numaraları Leibinger ana kataloğundan alınmıştır.',
   faq=[('Iris makas ile Lagrange makas arasındaki fark nedir?','Iris makas düz ya da tek eğri ince ağızlıdır; Lagrange makasın ağzı çift eğridir ve dar alanlarda dikiş almak için uygundur.'),
-       ('SC (tungsten karbid) makas neden tercih edilir?','Tungsten karbid kesici kenar daha sert olduğu için keskinliğini uzun süre korur ve dokuyu ezmeden keser.'),
+       ('SC (Supercut) makas nedir?','Supercut makasların kesici kenarları özel bir bileme ile çok keskin hale getirilir. Tek altın renkli halkasından ayırt edilir.'),
        ('Cerrahi makaslar otoklavlanabilir mi?','Evet, paslanmaz çelik ve SC makaslar standart otoklav sterilizasyonuna uygundur; menteşe bölgesi düzenli temizlenmeli ve yağlanmalıdır.')],
   related=('portegu','davye','el-aletleri'),
  ),
  dict(
-  slug='el-aletleri', nav='El aletleri',
+  slug='el-aletleri', nav='El aletleri', menu=True,
   title='Diş Hekimliği El Aletleri | Alman Menşeli Leibinger',
   desc='Alman menşeli Otto Leibinger diş hekimliği el aletleri: davye, elevatör, küret, portegü, cerrahi makas, ayna, sond, ekskavatör, bistüri sapı, presel ve ortodonti pensleri.',
   h1='Diş hekimliği', h1em='el aletleri', eyebrow='Teşhisten cerrahiye · 200+ ürün',
@@ -107,12 +109,116 @@ PAGES = [
        ('Fiyatları neden göremiyorum?','Fiyatlar diş hekimlerine özeldir. Kristal Diş Deposu\'na ücretsiz üye olduktan sonra görünür.')],
   related=('davye','kuret','portegu','cerrahi-makas'),
  ),
+ dict(
+  slug='elevator', nav='Elevatör', menu=True,
+  title='Elevatör ve Lüksatör Çeşitleri | Bein, Cryer, Heidbrink | Leibinger',
+  desc='Alman menşeli Leibinger kök elevatörleri ve lüksatörler: Bein, Cryer, Heidbrink, Lindo-Levian, periost elevatörleri. Elevatör çeşitleri, ölçüleri ve kullanım alanları.',
+  h1='Elevatör', h1em='ve lüksatör', eyebrow='Çekim · Kök elevatörleri · Lüksatörler',
+  hero=LB + '2025/02/20210708_Leibinger_0053.jpg',
+  lead='Leibinger kök elevatörleri ve lüksatörleri Almanya, Mühlheim\'da üretilir. Lüksatörlerle dişi kemiğe bağlayan periodontal lifler kesilip alveol genişletilir; böylece diş kemiğe zarar vermeden, daha nazik bir şekilde çıkarılabilir. Bu da implant öncesi çekimler için uygundur.',
+  cats=('Kök Elavatörleri','Periost Elavatörleri','Periost Elevatörleri'), exclude=('OT.185/8MK',),
+  guide_title='Elevatör tipleri ve kullanım alanları',
+  guide_head=('Tip','Uç','Kullanım','Katalog no'),
+  guide=[('Bein','Düz, oluklu uç · 2 · 3 · 4 mm','Kökleri gevşetmek ve kaldırmak için en yaygın düz elevatör','190/1 · 190/2 · 190/3'),
+         ('Lüksatör','İnce, keskin uç · 2,5 – 5 mm · düz ve eğri','Periodontal lifleri kesip alveolü genişletme; atravmatik çekim','190/3ST … 190/5C'),
+         ('Cryer','Üçgen uç · sağ ve sol','Alt molar kökleri, karşı kökü kaldırmak','190/13 · 190/14'),
+         ('Heidbrink','İnce, açılı uç','Apikal kök parçaları','192/01 · 192/02 · 192/03'),
+         ('Lindo-Levian','İnce kök elevatörü · 3,5 ve 4 mm','Dar alanlarda kök gevşetme','190/23 · 190/24'),
+         ('Periost elevatörü (Molt 9, Prichard)','Geniş ve yuvarlak uç','Flep kaldırma, periostu kemikten ayırma','335/M9 · 335/PR3S')],
+  guide_note='Tipler ve katalog numaraları Leibinger ana kataloğundan alınmıştır. Lüksatörlerin ErgoDesign saplı (-ED) ve renk kodlu (F) versiyonları da vardır.',
+  faq=[('Elevatör ile lüksatör arasındaki fark nedir?','Elevatör kökü kaldırmak ve gevşetmek için kaldıraç gibi kullanılır. Lüksatörün ucu daha ince ve keskindir; kök ile kemik arasına girerek periodontal lifleri keser, kaldıraç olarak kullanılması önerilmez.'),
+       ('Hangi ölçü elevatörle başlamalıyım?','Temel sette genellikle 2, 3 ve 4 mm Bein elevatörler bulunur. Dar kökler için ince, geniş kökler için kalın uçlu model seçilir. Leibinger Bein elevatörleri 3 parça set olarak da bulunur.'),
+       ('Cryer elevatör neden sağ ve sol olarak satılır?','Cryer elevatörün üçgen ucu belirli bir yöne bakar. Alt çenede iki taraf için ayrı model gerektiği için sağ ve sol olarak ya da çift set halinde kullanılır.'),
+       ('Lüksatör ucu nasıl korunur?','İnce uç darbeye ve kaldıraç kuvvetine hassastır. Kaldıraç olarak kullanılmamalı, sterilizasyonda diğer aletlerle çarpışmaması için kasette saklanmalıdır.')],
+  related=('davye','cerrahi-makas','ekartor'),
+ ),
+ dict(
+  slug='ortodonti-pensi', nav='Ortodonti', menu=True,
+  title='Ortodonti Pensleri | Distal Uç Kesici, Tel Bükme, Aligner | Leibinger',
+  desc='Alman menşeli Leibinger ortodonti pensleri: distal uç kesici, ligatür kesici, tel bükme pensleri, aligner pensleri. TC (tungsten karbid) uçlu kesiciler.',
+  h1='Ortodonti', h1em='pensleri', eyebrow='Ortodonti · Tel kesme ve bükme · Aligner',
+  hero=LB + '2025/02/20210708_Leibinger_0058.jpg',
+  lead='Leibinger ortodonti pensleri tel bükme, tel ve ligatür kesme ile aligner (şeffaf plak) işlemleri için Almanya\'da üretilir. Kesicilerin TC versiyonlarında kesici kenarlarda tungsten karbid kullanılır.',
+  cats=('Ortodonti',), skupre=('OT.63',),
+  guide_title='Hangi pens ne için?',
+  guide_head=('Pens','Kullanım','Kristal\'deki model'),
+  guide=[('Distal uç kesici (Distal End Cutter)','Ark telinin distal ucunu ağız içinde keser ve kesilen ucu tutar','632/16TC · 632/19TC (mini)'),
+         ('Ligatür kesici','Ligatür tellerini keser','632/3TC'),
+         ('Flush cutter','Teli yüzeye yakın keser','632/24TC'),
+         ('Tel kesme pensi','Kalın tel kesimi','632/15TC · 632/6 · 632/6TC'),
+         ('Tel bükme pensleri','Yuvarlak ve açılı uçlarla tel bükme','630/11 · 630/4'),
+         ('Aligner pensleri','Şeffaf plağa damla, dikey ve yatay çentik açma','630/84 · 630/82 · 630/81')],
+  guide_note='Model numaraları Kristal Diş Deposu\'ndaki Leibinger ürünlerinden alınmıştır. Leibinger\'in ortodonti broşürünü Kataloglar sayfasında bulabilirsiniz.',
+  faq=[('TC uçlu kesici ne demek?','TC (tungsten karbid) kesici kenarlar paslanmaz çelikten daha serttir. Bu yüzden sert ortodontik telleri keserken keskinliklerini daha uzun süre korurlar.'),
+       ('Distal uç kesicide "safety hold" ne işe yarar?','Kesilen tel parçasını pensin ağzında tutar, böylece parça ağız içine düşmez.'),
+       ('Aligner pensleri ne için kullanılır?','Şeffaf plaklara (aligner) kuvvet uygulamak ya da tutuculuk için damla, dikey veya yatay çentik açmakta kullanılır.')],
+  related=('el-aletleri','kataloglar-link','davye'),
+ ),
+ dict(
+  slug='rubberdam', nav='Rubberdam',
+  title='Rubberdam Klempleri ve Rubberdam Seti | Klemp Numaraları | Leibinger',
+  desc='Alman menşeli Leibinger rubberdam klempleri ve rubberdam seti. Klemp numaraları hangi diş için kullanılır? #00, #1, #2, #2A, #3, #7, #8, #8A, #9, #12A, #13A, #14A, #212.',
+  h1='Rubberdam', h1em='klempleri', eyebrow='Endodonti · Restoratif · İzolasyon',
+  hero=LB + '2025/02/20250203-Leibinger-044.jpg',
+  lead='Leibinger rubberdam klempleri paslanmaz çelikten üretilir ve her numara belirli bir diş grubuna göre şekillendirilmiştir. Rubberdam seti; çocuk ve yetişkin çerçevesi, delme pensi, klemp pensi, 8 klemp ve klemp tutucusuyla gelir.',
+  cats=('Rubberdam',),
+  guide_title='Rubberdam klemp numaraları',
+  guide_head=('Klemp','Diş grubu (Leibinger kataloğu)','Katalog no'),
+  guide=[('#00','Alt kaninler ve premolarlar','316/RDC00'),('#1','Üst premolarlar','316/RDC1'),('#2 · #2A','Üst ve alt premolarlar','316/RDC2 · 316/RDC2A'),
+         ('#3','Alt molarlar','316/RDC3'),('#7','Alt molarlar','316/RDC7'),('#8','Üst molarlar, büyük klemp','316/RDC8'),
+         ('#8A','Üst ve alt molar kökleri','316/RDC8A'),('#9','Ön dişler','316/RDC9'),('#12A','Alt molarlar, sağ ve sol','316/RDC12A'),
+         ('#13A','Alt molarlar, sol','316/RDC13A'),('#14A','Büyük molarlar','316/RDC14A'),('#212','Ön dişlerde labial kaviteler','316/RDC212')],
+  guide_note='Açıklamalar Leibinger ana kataloğundan çevrilmiştir. Klemplerin siyah (-B) versiyonları da vardır. Rubberdam seti (316/SET) şu klempleri içerir: 00, 2, 2A, 7, 8, 8A, 9, 14A.',
+  faq=[('Rubberdam setinde neler var?','Leibinger rubberdam setinde 1 çocuk çerçevesi, 1 yetişkin çerçevesi, 1 rubberdam delme pensi, 1 klemp pensi, 8 klemp (00, 2, 2A, 7, 8, 8A, 9, 14A) ve 1 klemp tutucusu bulunur.'),
+       ('Kanatlı ve kanatsız klemp farkı nedir?','Kanatlı klemp rubberdam örtüsüyle birlikte tek seferde yerleştirilebilir. Kanatsız klempte önce klemp takılır, örtü sonra geçirilir. Klempin adındaki ve görselindeki forma bakarak seçebilirsiniz.'),
+       ('Hangi klemplerle başlamalıyım?','Çoğu klinikte premolar için #2 veya #2A, molar için #7 veya #8, ön dişler için #9 ve #212 sık kullanılır. Rubberdam seti bu temel numaraları içerir.')],
+  related=('ayna','el-aletleri','kataloglar-link'),
+ ),
+ dict(
+  slug='ayna', nav='Ayna',
+  title='Rodyum Mikro Ayna ve Dişçi Aynası Sapı | Leibinger',
+  desc='Alman menşeli Leibinger rodyum mikro aynalar (Ø 3 mm, Ø 5 mm, 3×6 mm) ve ölçekli ayna sapı. Mikrocerrahi, endodonti ve implantoloji için ön yüzey (FS) aynalar.',
+  h1='Rodyum', h1em='mikro ayna', eyebrow='Teşhis · Mikrocerrahi · Endodonti',
+  hero=LB + '2024/12/20210708_Leibinger_0074.jpg',
+  lead='Leibinger mikro aynaları yalnızca 0,6 mm kalınlığındadır ve mikrocerrahi için tasarlanmıştır. Ön yüzey (FS) rodyum kaplama, çift görüntü oluşturmayan net ve kontrastlı bir görüntü verir; yapışmayı azaltan yüzeyi kolay temizlenir.',
+  cats=('Aynalar',),
+  guide_title='Mikro ayna boyutları',
+  guide_head=('Ayna','Kullanım (Leibinger kataloğu)','Katalog no'),
+  guide=[('Ø 3 mm','Kanal ağızlarını bulma, apikal rezeksiyon','201/10'),('Ø 5 mm','Hazırlanmış kanalları, fissürleri ve inley kavitelerini kontrol etme','201/20'),
+         ('3 × 6 mm','Doğrudan görülemeyen çürükleri bulma (ör. mine altında)','201/30'),('Ölçekli ayna sapı','Mikro aynalarla birlikte, ölçekli','200/51M')],
+  guide_note='Kullanım alanları Leibinger ana kataloğundaki mikro ayna açıklamasından çevrilmiştir. Aynalar 12\'li kutu halinde de bulunur.',
+  faq=[('Ön yüzey (FS) ayna nedir?','Yansıtıcı katmanın camın arkasında değil ön yüzeyinde olduğu aynadır. Çift görüntü oluşturmaz, daha net ve kontrastlı bir görüntü verir.'),
+       ('Rodyum kaplamanın avantajı nedir?','Rodyum kaplama parlak ve doğru renkli bir görüntü sağlar. Leibinger\'in FS rodyum aynalarında yapışmayı azaltan bir yüzey de vardır, bu yüzden kolay temizlenir.'),
+       ('Mikro ayna standart ayna sapına takılır mı?','Leibinger mikro aynaları ölçekli ayna sapıyla birlikte set olarak ya da yalnızca ayna olarak bulunur. Sap uyumluluğu için ürün sayfasındaki bilgiye bakın ya da bize WhatsApp\'tan yazın.')],
+  related=('el-aletleri','rubberdam','kuret'),
+ ),
+ dict(
+  slug='ekartor', nav='Ekartör',
+  title='Cerrahi Ekartör Çeşitleri | Farabeuf, Langenbeck, Molt | Leibinger',
+  desc='Alman menşeli Leibinger cerrahi ekartörler: Farabeuf, Kocher-Langenbeck, Wieder dil ekartörü, Molt ağız açacağı. Ölçüler ve kullanım alanları.',
+  h1='Cerrahi', h1em='ekartörler', eyebrow='Cerrahi · Yara ve ağız ekartörleri',
+  hero=LB + '2025/02/20250203-Leibinger-082.jpg',
+  lead='Leibinger ekartörleri ağız içi cerrahide yanak, dudak, dil ve flebi uzaklaştırarak görüş alanı ve erişim sağlamak için Almanya\'da üretilir.',
+  cats=('Ekartörler',),
+  guide_title='Ekartör tipleri',
+  guide_head=('Model','Ölçü','Kullanım','Katalog no'),
+  guide=[('Farabeuf','125 · 150 mm (2\'li set)','Yanak, dudak ve flep ekartasyonu','353/8 · 353/9'),
+         ('Kocher-Langenbeck','30×11 – 50×11 mm ağız · 22 cm','Derin cerrahi alanlarda flep ekartasyonu','355/11 – 355/15'),
+         ('Wieder dil ekartörü','140 · 145 mm','Dili uzaklaştırma ve koruma','354/W1 · 354/W2'),
+         ('Molt ağız açacağı','12 · 14 cm','Ağzı açık tutma','700/7 · 700/8')],
+  guide_note='Ölçüler ve katalog numaraları Leibinger ana kataloğundan alınmıştır. Katalogda Minnesota, Obwegeser, Roux ve Middeldorpf ekartörleri de vardır; sormak için WhatsApp\'tan yazabilirsiniz.',
+  faq=[('Farabeuf ekartör neden çift satılır?','Farabeuf ekartörün iki ucu farklı boyuttadır ve genellikle iki farklı uzunlukta set olarak kullanılır. Leibinger\'de 125 mm ve 150 mm\'lik iki parça set halinde bulunur.'),
+       ('Langenbeck ekartörün ölçüsü nasıl seçilir?','Ağız genişliği ve derinliği cerrahi alana göre seçilir. Dar ve derin alanlar için 11 mm genişlikte uzun ağızlı modeller, daha geniş flepler için 14 – 16 mm modeller uygundur.'),
+       ('Ekartörler otoklavlanabilir mi?','Evet, paslanmaz çelik ekartörler standart otoklav sterilizasyonuna uygundur. Üreticinin bakım talimatlarına uyulmalıdır.')],
+  related=('elevator','cerrahi-makas','portegu'),
+ ),
 ]
 PG = {p['slug']: p for p in PAGES}
+MENU = ('davye','elevator','kuret','ortodonti-pensi','el-aletleri')
 
 # ---------------- şablon ----------------
 def header():
-    links = ''.join(f'<a href="/{p["slug"]}/">{p["nav"]}</a>' for p in PAGES) + '<a href="/kataloglar/">Kataloglar</a>'
+    links = ''.join(f'<a href="/{p["slug"]}/">{p["nav"]}</a>' for p in (PG[x] for x in MENU)) + '<a href="/kataloglar/">Kataloglar</a><a href="/rehber/">Rehber</a>'
     return f'''<header>
   <div class="wrap">
     <a class="logo" href="/"><img src="{LB}2025/01/cropped-cropped-1978-3-2-1-2.png" alt="Leibinger Dental"><span>TÜRKİYE</span></a>
@@ -125,7 +231,7 @@ FOOTER = f'''<footer>
   <div class="wrap">
     <img src="{KD}/idea/hy/90/themes/selftpl_68a31aa3a0c2a/assets/uploads/logo.png" alt="Kristal Diş Deposu">
     <div>Kristal Diş Deposu · Otto Leibinger Türkiye resmî distribütörü<br>Cumhuriyet Mah. Tennuri Sok. No:13/C, Melikgazi / Kayseri
-      <div class="note">Kategoriler: {' · '.join(f'<a href="/{p["slug"]}/">{p["nav"]}</a>' for p in PAGES)} · <a href="/kataloglar/">Kataloglar</a></div>
+      <div class="note">Kategoriler: {' · '.join(f'<a href="/{p["slug"]}/">{p["nav"]}</a>' for p in PAGES)} · <a href="/kataloglar/">Kataloglar</a> · <a href="/rehber/">Rehber</a></div>
       <div class="note">Görseller ve video: Otto Leibinger GmbH, Mühlheim an der Donau.</div></div>
     <a href="{KD}">kristaldisdeposu.com</a>
   </div>
@@ -139,6 +245,10 @@ def card(p):
 
 def page(pg):
     prods = by_cat(*pg['cats'])
+    if pg.get('exclude'):
+        prods = [p for p in prods if p['sku'] not in pg['exclude']]
+    if pg.get('skupre'):
+        prods = [p for p in prods if p['sku'].startswith(pg['skupre'])]
     url = f'{SITE}/{pg["slug"]}/'
     guide = ''
     if pg.get('guide_title'):
@@ -152,10 +262,10 @@ def page(pg):
 </div></section>'''
     hub = ''
     if pg['slug'] == 'el-aletleri':
-        cards = ''.join(f'<a class="hubc" href="/{PG[s]["slug"]}/"><img src="{PG[s]["hero"]}" alt="" loading="lazy"><span>{PG[s]["nav"]}</span></a>' for s in ('davye','kuret','portegu','cerrahi-makas'))
+        cards = ''.join(f'<a class="hubc" href="/{PG[s]["slug"]}/"><img src="{PG[s]["hero"]}" alt="" loading="lazy"><span>{PG[s]["nav"]}</span></a>' for s in ('davye','elevator','kuret','portegu','cerrahi-makas','ekartor','rubberdam','ayna','ortodonti-pensi'))
         hub = f'<section style="padding-bottom:0"><div class="wrap"><span class="eyebrow">Kategoriler</span><h2 style="margin-top:12px">Gruba göre <em>incele</em></h2><div class="hub">{cards}</div></div></section>'
     faq = ''.join(f'<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in pg['faq'])
-    rel = ''.join(f'<a class="btn btn-ghost" href="/{s}/">{PG[s]["nav"]}</a>' for s in pg['related'])
+    rel = ''.join(('<a class="btn btn-ghost" href="/kataloglar/">Kataloglar</a>' if s == 'kataloglar-link' else f'<a class="btn btn-ghost" href="/{s}/">{PG[s]["nav"]}</a>') for s in pg['related'])
     ld = [
       {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
         {"@type":"ListItem","position":1,"name":"Leibinger Dental Türkiye","item":SITE+'/'},
@@ -243,6 +353,16 @@ def page(pg):
 CONTACT_HTML = '<section class="contact" id="iletisim">\n  <div class="wrap contact-grid">\n    <div>\n      <span class="eyebrow">İletişim</span>\n      <h2 style="margin-top:12px">Leibinger ürünleri için <em>bize ulaşın</em></h2>\n      <p class="lead">Model seçimi, set içerikleri ve sipariş için doğrudan yazabilir ya da arayabilirsiniz.</p>\n      <a class="btn btn-wa" href="https://wa.me/905340867700?text=Merhaba%2C%20leibingerturkiye.com%20%C3%BCzerinden%20ula%C5%9F%C4%B1yorum.%20Leibinger%20%C3%BCr%C3%BCnleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener"><svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.6l-.4-.2-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.8-3.8-1.8-5.9C5 9.9 10 5.2 16 5.2s11 4.7 11 10.6-5 10.6-11 10.6zm6-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg><span>WhatsApp\'tan ulaşın</span></a>\n    </div>\n    <dl class="cinfo">\n      <div><dt>Yetkili</dt><dd>Serhat Argunhan · Kristal Diş Deposu</dd></div>\n      <div><dt>Telefon</dt><dd><a href="tel:+905340867700">0534 086 77 00</a></dd></div>\n      <div><dt>WhatsApp</dt><dd><a href="https://wa.me/905340867700?text=Merhaba%2C%20leibingerturkiye.com%20%C3%BCzerinden%20ula%C5%9F%C4%B1yorum.%20Leibinger%20%C3%BCr%C3%BCnleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">0534 086 77 00</a></dd></div>\n      <div><dt>E-posta</dt><dd><a href="mailto:serhatarg@hotmail.com">serhatarg@hotmail.com</a></dd></div>\n      <div><dt>Adres</dt><dd>Cumhuriyet Mah. Tennuri Sok. No:13/C<br>Melikgazi / Kayseri</dd></div>\n    </dl>\n  </div>\n</section>\n<a class="wa-float" href="https://wa.me/905340867700?text=Merhaba%2C%20leibingerturkiye.com%20%C3%BCzerinden%20ula%C5%9F%C4%B1yorum.%20Leibinger%20%C3%BCr%C3%BCnleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp\'tan ulaşın"><svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.6l-.4-.2-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.8-3.8-1.8-5.9C5 9.9 10 5.2 16 5.2s11 4.7 11 10.6-5 10.6-11 10.6zm6-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg><span>WhatsApp\'tan ulaşın</span></a>\n'
 LD_STORE = '<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Store", "name": "Kristal Diş Deposu – Leibinger Dental Türkiye", "url": "https://leibingerturkiye.com/", "telephone": "+90 534 086 77 00", "email": "serhatarg@hotmail.com", "address": {"@type": "PostalAddress", "streetAddress": "Cumhuriyet Mah. Tennuri Sok. No:13/C", "addressLocality": "Melikgazi", "addressRegion": "Kayseri", "addressCountry": "TR"}, "brand": {"@type": "Brand", "name": "Otto Leibinger"}, "contactPoint": {"@type": "ContactPoint", "telephone": "+90 534 086 77 00", "contactType": "sales", "availableLanguage": ["Turkish"]}}</script>'
 EXTRA_CSS = '''
+.art{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:clamp(24px,5vw,64px);align-items:start}
+.art article{max-width:720px}
+.art article h2{font-size:clamp(1.3rem,2.4vw,1.7rem);margin:28px 0 10px}
+.art article p{font-size:1.06rem;line-height:1.7;margin:0 0 12px}
+.art .rel{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.art aside{position:sticky;top:96px;border:1.5px solid var(--green);border-radius:16px;padding:18px 20px;background:#fff}
+.art aside h3{margin:0 0 10px;font-size:1rem}
+.art aside ul{margin:0;padding-left:18px;display:grid;gap:8px}
+@media (max-width:860px){.art{grid-template-columns:1fr}.art aside{position:static}}
+
 .katlist{display:grid;gap:12px;max-width:900px}
 .kat{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;border:1.5px solid var(--green);border-radius:16px;padding:18px 20px;text-decoration:none;background:#fff;transition:transform .15s ease}
 .kat:hover{transform:translateY(-2px)}
@@ -363,6 +483,90 @@ def katalog_page():
 </html>
 '''
 
+def _head(title, desc, url, og_img=None, ld=()):
+    ld_s = '\n'.join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in ld)
+    ogi = f'<meta property="og:image" content="{og_img}">' if og_img else ''
+    return f'''<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{esc(title)}</title>
+<meta name="description" content="{esc(desc)}">
+<link rel="canonical" href="{url}">
+<link rel="icon" href="{LB}2025/01/cropped-cropped-1978-3-2-1-2.png">
+<meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{url}"><meta property="og:locale" content="tr_TR">{ogi}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="/style.css">
+{ld_s}
+{LD_STORE}
+</head>
+<body>
+{header()}'''
+
+def rehber_page(a):
+    url = f'{SITE}/rehber/{a["slug"]}/'
+    img = LB + a['hero']
+    ld = [{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+            {"@type":"ListItem","position":1,"name":"Leibinger Dental Türkiye","item":SITE+'/'},
+            {"@type":"ListItem","position":2,"name":"Rehber","item":SITE+'/rehber/'},
+            {"@type":"ListItem","position":3,"name":a['title'],"item":url}]},
+          {"@context":"https://schema.org","@type":"Article","headline":a['title'],"description":a['desc'],"image":img,
+           "inLanguage":"tr","mainEntityOfPage":url,"author":{"@type":"Organization","name":"Kristal Diş Deposu"},
+           "publisher":{"@type":"Organization","name":"Kristal Diş Deposu"}}]
+    body = ''.join(f'<h2>{esc(h)}</h2><p>{esc(t)}</p>' for h, t in a['body'])
+    links = ''.join(f'<a class="btn btn-ghost" href="{u}">{esc(t)}</a>' for u, t in a['links'])
+    others = ''.join(f'<li><a href="/rehber/{b["slug"]}/">{esc(b["title"])}</a></li>' for b in REHBER if b is not a)
+    return _head(a['title'], a['desc'], url, img, ld) + f'''
+<main>
+<section class="phero">
+  <div class="wrap phero-grid">
+    <div class="txt">
+      <nav class="crumb" aria-label="Konum"><a href="/">Leibinger Türkiye</a> / <a href="/rehber/">Rehber</a></nav>
+      <span class="eyebrow">Rehber</span>
+      <h1>{esc(a["h1"])} <em>{esc(a["h1em"])}</em></h1>
+      <p class="lead">{esc(a["lead"])}</p>
+    </div>
+    <img class="phero-img" src="{img}" alt="">
+  </div>
+</section>
+<section>
+  <div class="wrap art">
+    <article>{body}
+      <p class="note2">Bu yazı genel bilgilendirme amaçlıdır. Klinik kararlar hekimin değerlendirmesine, bakım ve sterilizasyon üretici talimatlarına göre verilmelidir.</p>
+      <div class="rel">{links}</div>
+    </article>
+    <aside><h3>Diğer rehberler</h3><ul>{others}</ul></aside>
+  </div>
+</section>
+</main>
+{CONTACT_HTML}
+{FOOTER}
+</body>
+</html>
+'''
+
+def rehber_index():
+    url = f'{SITE}/rehber/'
+    title = 'Diş Hekimliği El Aletleri Rehberi | Leibinger Dental Türkiye'
+    desc = 'Davye seçimi, Gracey küret numaraları, el aletleri bakımı ve sterilizasyonu hakkında pratik rehberler.'
+    cards = ''.join(f'<a class="hubc" href="/rehber/{a["slug"]}/"><img src="{LB}{a["hero"]}" alt="" loading="lazy"><span>{esc(a["title"])}</span></a>' for a in REHBER)
+    return _head(title, desc, url) + f'''
+<main>
+<section class="phero"><div class="wrap"><div class="txt" style="display:grid;gap:14px;justify-items:start;max-width:760px">
+  <nav class="crumb" aria-label="Konum"><a href="/">Leibinger Türkiye</a> / <span>Rehber</span></nav>
+  <h1>El aletleri <em>rehberi</em></h1>
+  <p class="lead">Doğru aleti seçmek ve uzun süre kullanmak için kısa, pratik yazılar.</p>
+</div></div></section>
+<section><div class="wrap"><div class="hub">{cards}</div></div></section>
+</main>
+{CONTACT_HTML}
+{FOOTER}
+</body>
+</html>
+'''
+
 def main():
     base = open(os.path.join(B, 'base.css'), encoding='utf-8').read()
     open(os.path.join(ROOT, 'style.css'), 'w', encoding='utf-8').write(base + EXTRA_CSS)
@@ -371,11 +575,16 @@ def main():
         open(os.path.join(d, 'index.html'), 'w', encoding='utf-8').write(page(pg))
     os.makedirs(os.path.join(ROOT,'kataloglar'), exist_ok=True)
     open(os.path.join(ROOT,'kataloglar','index.html'),'w',encoding='utf-8').write(katalog_page())
-    urls = [SITE + '/'] + [f'{SITE}/{p["slug"]}/' for p in PAGES] + [SITE + '/kataloglar/']
+    os.makedirs(os.path.join(ROOT,'rehber'), exist_ok=True)
+    open(os.path.join(ROOT,'rehber','index.html'),'w',encoding='utf-8').write(rehber_index())
+    for a in REHBER:
+        d = os.path.join(ROOT,'rehber',a['slug']); os.makedirs(d, exist_ok=True)
+        open(os.path.join(d,'index.html'),'w',encoding='utf-8').write(rehber_page(a))
+    urls = [SITE + '/'] + [f'{SITE}/{p["slug"]}/' for p in PAGES] + [SITE + '/kataloglar/', SITE + '/rehber/'] + [f'{SITE}/rehber/{a["slug"]}/' for a in REHBER]
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{u}</loc></url>' for u in urls) + '</urlset>\n'
     open(os.path.join(ROOT, 'sitemap.xml'), 'w').write(sm)
     for pg in PAGES:
-        print(pg['slug'], len(by_cat(*pg['cats'])), 'ürün')
+        print(pg['slug'], 'ok')
 
 if __name__ == '__main__':
     main()
