@@ -152,6 +152,8 @@ section + section, section + .band, .band + section{border-top:1px solid var(--g
 .btn-ghost{border-color:var(--green);color:var(--green-d)}
 footer{border-top:6px solid var(--green);background:var(--green-soft)}
 
+@media (max-width:860px){header .wrap{flex-wrap:wrap;row-gap:10px}header nav{display:flex;order:3;flex:1 0 100%;overflow-x:auto;gap:20px;padding:2px 0 6px;white-space:nowrap;font-size:.92rem;scrollbar-width:none;-webkit-overflow-scrolling:touch}header nav::-webkit-scrollbar{display:none}}
+
 .art{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:clamp(24px,5vw,64px);align-items:start}
 .art article{max-width:720px}
 .art article h2{font-size:clamp(1.3rem,2.4vw,1.7rem);margin:28px 0 10px}

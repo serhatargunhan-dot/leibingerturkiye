@@ -4,7 +4,7 @@ REHBER = [
   slug='davye-nasil-secilir',
   title='Davye Nasıl Seçilir? Üst ve Alt Çene Davye Rehberi',
   desc='Davye seçerken çene, diş grubu, gaga şekli ve sap tipine nasıl bakılır? Davye numaraları, çocuk davyeleri ve kırık kök davyeleri hakkında pratik rehber.',
-  h1='Davye nasıl', h1em='seçilir?', hero='2025/02/20210708_Leibinger_0046.jpg',
+  h1='Davye nasıl', h1em='seçilir?', hero='/img/20210708_Leibinger_0046.webp',
   lead='Doğru davye, dişi kırmadan ve çevre dokuya zarar vermeden çekimi kolaylaştırır. Bu rehberde davye seçerken bakılacak dört noktayı ve sık kullanılan numaraları özetledik.',
   body=[
    ('1. Önce çeneyi ayırın', 'Üst çene davyelerinde gaga ile sap aynı doğrultudadır ya da hafif açılıdır. Alt çene davyelerinde ise gaga sapa göre belirgin şekilde dik açılıdır. Leibinger modellerinde çene, ürün adında ve katalog açıklamasında belirtilir.'),
@@ -20,7 +20,7 @@ REHBER = [
   slug='gracey-kuret-numaralari',
   title='Gracey Küret Numaraları Ne Anlama Gelir? 1-2\'den 15-16\'ya',
   desc='Gracey küret numaraları hangi diş ve yüzeyde kullanılır? 1-2, 5-6, 7-8, 11-12, 13-14, 15-16 küretler, Deep Scale (M) modeller ve üniversal küretle farkı.',
-  h1='Gracey küret', h1em='numaraları', hero='2025/02/20250203-Leibinger-018.jpg',
+  h1='Gracey küret', h1em='numaraları', hero='/img/20250203-Leibinger-018.webp',
   lead='Gracey küretler bölgeye özeldir: her numara belirli bir diş grubu ve yüzey için açılandırılmıştır. Numarayı bilmek, doğru küretle daha az kuvvetle daha etkili çalışmak demektir.',
   body=[
    ('Kısa kural', 'Küçük numaralar ön dişler, büyük numaralar arka dişler içindir. Tek numaralar ve çift numaralar aynı aletin iki ucudur; biri bir yüzey ya da taraf, diğeri karşı yüzey ya da taraf içindir.'),
@@ -36,7 +36,7 @@ REHBER = [
   slug='el-aletleri-bakimi',
   title='Diş Hekimliği El Aletleri Bakımı ve Sterilizasyonu',
   desc='Davye, küret, makas ve portegü gibi el aletlerinin temizliği, yağlanması ve otoklav sterilizasyonu. Alet ömrünü uzatmak için pratik öneriler.',
-  h1='El aletleri', h1em='bakımı', hero='2025/02/20210708_Leibinger_0059-1536x1024.jpg',
+  h1='El aletleri', h1em='bakımı', hero='/img/20210708_Leibinger_0059-1536x1024.webp',
   lead='Paslanmaz çelik el aletleri doğru temizlenip yağlandığında uzun yıllar kullanılabilir. Bu rehberde günlük bakım için temel adımları özetledik. Her zaman üreticinin bakım talimatı ve kliniğinizin sterilizasyon protokolü esas alınmalıdır.',
   body=[
    ('1. Kullanımdan hemen sonra', 'Kan ve doku artıklarının kurumasına izin vermeyin. Aletleri kullanımdan sonra mümkün olan en kısa sürede ön temizliğe alın; kuruyan artıklar hem temizliği zorlaştırır hem de yüzeyde lekeye yol açabilir.'),
