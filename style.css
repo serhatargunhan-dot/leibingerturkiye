@@ -152,6 +152,23 @@ section + section, section + .band, .band + section{border-top:1px solid var(--g
 .btn-ghost{border-color:var(--green);color:var(--green-d)}
 footer{border-top:6px solid var(--green);background:var(--green-soft)}
 
+/* ---- iletişim ve WhatsApp ---- */
+.contact{background:var(--green-soft);border-top:3px solid var(--green)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,64px);align-items:center}
+.contact-grid > div:first-child{display:grid;gap:16px;justify-items:start}
+.cinfo{margin:0;background:#fff;border:1.5px solid var(--green);border-radius:18px;padding:8px 24px}
+.cinfo div{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--green-soft)}
+.cinfo div:last-child{border-bottom:0}
+.cinfo dt{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--green-d);padding-top:3px}
+.cinfo dd{margin:0;font-weight:500}
+.cinfo a{color:var(--ink);text-decoration-color:var(--green)}
+.btn-wa{background:#25d366;color:#fff;gap:10px}
+.btn-wa:hover{background:#1ebe5b}
+.wa-float{position:fixed;right:max(18px,env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:50;display:inline-flex;align-items:center;gap:10px;background:#25d366;color:#fff;text-decoration:none;font-weight:600;padding:12px 18px 12px 14px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.wa-float:hover{background:#1ebe5b}
+@media (max-width:600px){.wa-float span{display:none}.wa-float{padding:14px}}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
+
 /* ---- kategori sayfaları ---- */
 .phero{background:var(--green-soft);border-bottom:6px solid var(--green);padding-block:clamp(36px,6vw,72px)}
 .phero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,5vw,64px);align-items:center}
